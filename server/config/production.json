@@ -1,5 +1,6 @@
 {
   "host": "localhost",
   "port": 8030,
-  "public": "../../client/build/"
+  "public": "../../client/build/",
+  "mongodb": "mongodb://localhost:27017/feathers-react"
 }
