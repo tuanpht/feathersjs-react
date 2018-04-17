@@ -17,6 +17,9 @@
 - Start dev mode
   + `./start-server-client.js`
 
+- Test
+  + (cd server && NODE_ENV=test npm test)
+
 - Production
   + Edit config file `./server/config/production.json`
   + (cd client && npm run build)
