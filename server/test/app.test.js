@@ -22,10 +22,6 @@ describe('Feathers application tests', () => {
     this.server.close(done);
   });
 
-  it('starts and shows the index page', () => {
-    return rp(getUrl()).then(body => assert.ok(body.indexOf('<html>') !== -1));
-  });
-
   describe('404', function() {
     it('shows a 404 HTML page', () => {
       return rp({
