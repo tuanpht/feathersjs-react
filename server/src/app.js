@@ -37,9 +37,26 @@ if (public) {
   app.use('/', express.static(app.get('public')));
 }
 
+// API prefix
+app.declareService = function(name, app, service) {
+  const path = app.get('apiPath') + '/' + name;
+  // Initialize our service
+  app.use(path, service);
+
+  return app.getService(name);
+};
+
+app.getService = function(name) {
+  return app.service(app.get('apiPath') + '/' + name);
+};
+
 // Set up Plugins and providers
 app.configure(express.rest());
-app.configure(socketio());
+app.configure(
+  socketio({
+    path: '/ws',
+  })
+);
 
 app.configure(mongoose);
 

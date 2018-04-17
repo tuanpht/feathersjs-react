@@ -41,16 +41,21 @@ module.exports = function(app) {
     // Here you can add event publishers to channels set up in `channels.js`
     // To publish only for a specific event use `app.publish(eventname, () => {})`
 
+    // eslint-disable-next-line
+    console.log(
+      'Publishing all events to all authenticated users. See `channels.js`'
+    );
+
     // e.g. to publish all service events to all authenticated users use
     return app.channel('authenticated');
   });
 
   // Here you can also add service specific event publishers
   // e..g the publish the `users` service `created` event to the `admins` channel
-  // app.service('users').publish('created', () => app.channel('admins'));
+  // app.getService('users').publish('created', () => app.channel('admins'));
 
   // With the userid and email organization from above you can easily select involved users
-  // app.service('messages').publish(() => {
+  // app.getService('messages').publish(() => {
   //   return [
   //     app.channel(`userIds/${data.createdBy}`),
   //     app.channel(`emails/${data.recipientEmail}`)

@@ -11,7 +11,7 @@ module.exports = function() {
     // This debugs the service call and a stringified version of the hook context
     // You can customize the mssage (and logger) to your needs
     logger.debug(
-      `${context.type} app.service('${context.path}').${context.method}()`
+      `${context.type} app.getService('${context.path}').${context.method}()`
     );
 
     if (typeof context.toJSON === 'function') {

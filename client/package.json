@@ -2,7 +2,15 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3030",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3030"
+    },
+    "/ws": {
+      "target": "http://localhost:3030",
+      "ws": true
+    }
+  },
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

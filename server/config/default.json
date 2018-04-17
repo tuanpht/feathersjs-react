@@ -6,14 +6,15 @@
     "max": 50
   },
   "mongodb": "mongodb://localhost:27017/feathers-react",
+  "apiPath": "api",
   "authentication": {
     "secret": "9833c2e5f8ae8248eed639ed3522c46ea6f73b77c8e497addfdf22039f607010dec04ddcccaf4aee3c00c2cc71b8a834392304a152c6280eddbda4bc463a07fb91c4ece5cd995317ca7bb0bda886df3ceea2045e8500e442e876f9c06ceb12fc0fdb3da7326386a696bbd7de595793577b393a71a026aca522244e12c156b4f587510b717a0b4c981561cc4522eda3c2ad04279a3f0a2f4fabaef4a223b715278fcb67de585a60ad295814e941497bd397ba4ca32657154bf0c51dd5204597d16c7bb2657ede05e45df922ba5f81d863be00b41e29b947485a6b0fd55acf33911f823275b5ad9680daccdb0f1f709e94234f47182d585c9bedc6509645747cc9",
     "strategies": [
       "jwt",
       "local"
     ],
-    "path": "/authentication",
-    "service": "users",
+    "path": "api/authentication",
+    "service": "api/users",
     "jwt": {
       "header": {
         "typ": "access"
