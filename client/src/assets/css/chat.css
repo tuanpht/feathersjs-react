@@ -1,0 +1,34 @@
+.row-parent,
+.column-parent {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+  border: 1px solid red;
+}
+
+.row-parent {
+  flex-direction: row;
+  height: 100%;
+}
+
+.column-parent {
+  flex-direction: column;
+}
+
+.sidebar {
+  flex: 0 1 auto;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.messages {
+  flex: 1 1 auto;
+}
+
+.input {
+  flex: 0 1 auto;
+}

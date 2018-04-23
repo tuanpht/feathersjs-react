@@ -3,7 +3,18 @@
   height: 50px;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+}
+
 .App-header {
+  flex: 0 1 auto;
   background-color: #222;
   padding: 5px 5px 10px 5px;
   color: white;
@@ -15,6 +26,7 @@
 }
 
 .App-content {
+  flex: 1 1 auto;
   padding: 5px;
   text-align: center;
 }
