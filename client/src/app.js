@@ -12,6 +12,7 @@ import Login from './routes/login';
 import client from './modules/feathers';
 import Profile from './routes/profile';
 import Chat from './routes/chat';
+import userInfo from './modules/user-info';
 
 const checkActive = (match, location) => {
   return location && location.pathname === '/';
@@ -21,7 +22,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
+      user: userInfo.get(),
     };
   }
 
@@ -32,14 +33,16 @@ class App extends Component {
     // On successfull login
     client.on('authenticated', payload => {
       this.setState({user: payload.user});
+      userInfo.set(payload.user);
     });
 
     // On logout reset all all local state (which will then show the login screen)
-    client.on('logout', () =>
+    client.on('logout', () => {
+      userInfo.remove();
       this.setState({
         user: null,
-      })
-    );
+      });
+    });
   }
 
   handleLogout(e) {

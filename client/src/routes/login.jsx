@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import client from '../modules/feathers';
+import userInfo from '../modules/user-info';
 
 class Login extends Component {
   constructor() {
@@ -51,7 +52,10 @@ class Login extends Component {
         email,
         password,
       })
-      .then(() => this.props.history.push('/'))
+      .then(payload => {
+        userInfo.set(payload.user);
+        this.props.history.push('/');
+      })
       .catch(errors => this.setState({errors}));
   }
 
